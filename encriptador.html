@@ -26,7 +26,7 @@
     function encriptar(){
 
         var mensaje = document.getElementById("mensaje").value;
-        if (/^[a-z]+$/.test(mensaje)) {
+        if (/^[a-z\s]+$/.test(mensaje) && !(/[^\w\s!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~áéíóúüÁÉÍÓÚÜ]/.test(mensaje))) {
             var encriptado = "";
             for (var i = 0; i < mensaje.length; i++) {
                 var letra = mensaje[i];
@@ -60,7 +60,7 @@
     function desencriptar(){
 
         var mensaje = document.getElementById("mensaje").value;
-        if (/^[a-z]+$/.test(mensaje)) {
+        if (/^[a-z\s]+$/.test(mensaje) && !(/[áéíóúüÁÉÍÓÚÜ]/.test(mensaje))) {
             var desencriptado = "";
             for (var i = 0; i < mensaje.length; i++) {
                 var letra = mensaje[i];
