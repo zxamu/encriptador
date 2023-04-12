@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+</head>
+<body>
+
+    <h1>Encriptador</h1>
+
+    <form id="formulario">
+        <textarea name="" id="mensaje" cols="50" rows="10"></textarea>
+        <br>
+        <input type="button" value="Encriptar" onclick="encriptar()">
+        <input type="button" value="Desencriptar" onclick="desencriptar()">
+    </form>
+
+    <div id="text"></div>
+    
+</body>
+</html>
+<script>
+    
+    function encriptar(){
+
+        var mensaje = document.getElementById("mensaje").value;
+        var encriptado = "";
+        for (var i = 0; i < mensaje.length; i++) {
+            var letra = mensaje[i];
+            if(letra == 'a') {
+                encriptado += 'ai';
+            }
+            else if(letra == 'e') {
+                encriptado += 'enter';
+            }
+            else if(letra == 'i') {
+                encriptado += 'imer';
+            }
+            else if(letra == 'o') {
+                encriptado += 'ober';
+            }
+            else if(letra == 'u') {
+                encriptado += 'ufat';
+            }
+            else {
+                encriptado += letra;
+            }
+        }
+        document.getElementById("text").innerHTML = encriptado;
+
+    }
+
+    function desencriptar(){
+
+        var mensaje = document.getElementById("mensaje").value;
+        var desencriptado = "";
+        for (var i = 0; i < mensaje.length; i++) {
+            var letra = mensaje[i];
+            if(letra == 'a'){
+                desencriptado += 'a';
+                i++;
+            }
+            else if(letra == 'e'){
+                desencriptado += 'e';
+                i++;
+                i++;
+                i++;
+                i++;
+            }
+            else if(letra == 'i'){
+                desencriptado += 'i';
+                i++;
+                i++;
+                i++;
+            }
+            else if(letra == 'o'){
+                desencriptado += 'o';
+                i++;
+                i++;
+                i++;
+            }
+            else if(letra == 'u'){
+                desencriptado += 'u';
+                i++;
+                i++;
+                i++;
+            }
+            else {
+                desencriptado += letra;
+            }
+        }
+        document.getElementById("text").innerHTML = desencriptado;
+
+    }
+</script>
